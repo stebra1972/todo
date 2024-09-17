@@ -1,7 +1,7 @@
 import Flower from './assets/Flower.png';
 
 const title = document.createElement('h3');
-title.textContent = 'Webpack made easy';
+title.textContent = 'Weap made easy';
 
 const page = document.querySelector('body');
 page.append(title);

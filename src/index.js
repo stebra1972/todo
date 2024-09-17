@@ -9,3 +9,6 @@ page.append(title);
 const img = new Image();
 img.src = Flower;
 page.appendChild(img);
+
+import "./styles.css";
+

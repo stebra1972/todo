@@ -1,7 +1,50 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #6dca30;
-}
+/* styles.css */
+/* styles.css */
 
+/* Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed; /* Fix the position at the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Span across the full width */
+    background-color: #f4f4f4; /* Optional: background color to match the page or stand out */
+    padding: 10px 20px; /* Optional: add some padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
+  }
+  
+  /* Date Display Styles */
+  .date-display {
+    font-size: 20px;
+    color: #333;
+  }

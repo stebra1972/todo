@@ -4,7 +4,7 @@
 /* Page Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #a3dbdb;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -16,8 +16,7 @@ body {
   /* Button Styles */
   button {
     background-color: #007bff;
-    color: white;
-    border: none;
+    color: rgb(16, 2, 2);
     padding: 10px 20px;
     margin: 0 5px;
     border-radius: 5px;
@@ -28,6 +27,7 @@ body {
   
   button:hover {
     background-color: #0056b3;
+
   }
   
   .top-row {
@@ -38,7 +38,7 @@ body {
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
     width: 100%; /* Span across the full width */
-    background-color: #f4f4f4; /* Optional: background color to match the page or stand out */
+    background-color: #a1f1f5; /* Optional: background color to match the page or stand out */
     padding: 10px 20px; /* Optional: add some padding */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
   }

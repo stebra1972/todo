@@ -6,10 +6,19 @@ topRow.style.justifyContent = 'space-between';
 topRow.style.alignItems = 'center';
 document.body.appendChild(topRow);
 
-// Create the "New Event" button
+
+// Import the createNewEvent function
+import { createNewEvent } from './newevent.js';
+
+// Existing code to create the "New Event" button
 const newEventButton = document.createElement('button');
 newEventButton.textContent = 'New Event';
 topRow.appendChild(newEventButton);
+
+// Add an event listener to the "New Event" button
+newEventButton.addEventListener('click', createNewEvent);
+
+
 
 // Create the left arrow button
 const leftArrow = document.createElement('button');

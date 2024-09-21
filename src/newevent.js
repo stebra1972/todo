@@ -40,16 +40,34 @@ function displayEvents() {
   // Clear the container before adding updated events list
   eventsContainer.innerHTML = "";
 
-  // Sort events by date
-  events.sort((a, b) => new Date(a.date) - new Date(b.date));
+// Sort events by date
+events.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  // Create and append HTML elements for each event
-  events.forEach(event => {
-    const eventElement = document.createElement("div");
-    eventElement.classList.add("event");
-    eventElement.innerHTML = `Impegno: ${event.name}, Orario: ${event.time}, Giorno: ${event.date}, Luogo: ${event.place}`;
-    eventsContainer.appendChild(eventElement);
+// Create and append HTML elements for each event
+events.forEach((event, index) => {
+
+  const eventElement = document.createElement("div");
+  eventElement.classList.add("event");
+  eventElement.innerHTML = `Impegno: ${event.name}, Orario: ${event.time}, Giorno: ${event.date}, Luogo: ${event.place}`;
+  eventsContainer.appendChild(eventElement);
+  
+  // Create the "Eseguito" button
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Eseguito";
+  deleteButton.style.marginLeft = "10px"; // Add some space between the event text and the button
+  
+  // Add click event listener to the button for deleting the event
+  deleteButton.addEventListener('click', function() {
+    // Remove the event from the store
+    events = events.filter(e => e.name !== event.name || e.date !== event.date || e.time !== event.time);
+    // Remove the event element from the display
+    eventElement.remove();
   });
+  
+  // Append the delete button to the event element
+  eventElement.appendChild(deleteButton);
+});
+  
 }
 
 

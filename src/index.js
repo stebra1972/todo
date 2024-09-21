@@ -27,10 +27,17 @@ topRow.appendChild(leftArrow);
 
 
 // Display the current date
+// Display the current date formatted as "sabato 21 settembre 2024"
 const dateDisplay = document.createElement('span');
 const currentDate = new Date();
-dateDisplay.textContent = currentDate.toLocaleDateString();
+dateDisplay.textContent = currentDate.toLocaleDateString('it-IT', {
+  weekday: 'long', // Display the full name of the day
+  day: 'numeric', // Display the day as a numeric value
+  month: 'long', // Display the full name of the month
+  year: 'numeric' // Display the year as a numeric value
+});
 topRow.appendChild(dateDisplay);
+
 
 // Create the right arrow button
 const rightArrow = document.createElement('button');

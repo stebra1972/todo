@@ -1,13 +1,51 @@
 // Initialize an array to store event objects
 let events = [];
 
-// Define a function to open multiple popup windows for input
+
+
+// Function to display dates in the top row
+function displayDatesInTopRow() {
+    // Assuming `events` is your array of event objects
+    const datesHtml = events.map(event => {
+      // Convert event.date to a Date object if it's not already one
+      const eventDate = new Date(event.date);
+      const formattedDate = eventDate.toLocaleDateString('it-IT', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      });
+      return `<span>${formattedDate}</span>`; // Create a span for each date
+    }).join(' '); // Join all spans with a space
+  
+    // Assuming you have a div with id="topRow" in your HTML
+    document.getElementById('topRow').innerHTML = datesHtml;
+  }
+
+
+
 function createNewEvent() {
-  const eventName = window.prompt("Inserisci l'even:", "Allenamento");
-  if (eventName) {
-    const eventDate = window.prompt("Inserisci la data dell'evento:", "01/01/2022");
+    const eventName = window.prompt("Inserisci l'evento:", "Allenamento");
+    // Format today's date in Italian format
+    const today = new Date();
+    const formattedToday = today.toLocaleDateString('it-IT', {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+    });
+    const eventDate = window.prompt("Inserisci la data dell'evento:", formattedToday);
     const eventTime = window.prompt("Inserisci l'ora dell'evento:", "12:00");
     const eventPlace = window.prompt("Inserisci il luogo dell'evento", "Palestra");
+  
+    function displayDatesInTopRow() {
+        // Assuming `events` is your array of event objects
+        const datesHtml = events.map(event => {
+          // Convert event.date to a Date object if it's not already one
+          const eventDate = new Date(event.date);
+          const formattedDate = eventDate.toLocaleDateString('it-IT', {
+            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+          });
+          return `<span>${formattedDate}</span>`; // Create a span for each date
+        }).join(' '); // Join all spans with a space
+      
+        // Assuming you have a div with id="topRow" in your HTML
+        document.getElementById('topRow').innerHTML = datesHtml;
+        }
 
     // Store event details in an object
     const event = {
@@ -16,16 +54,13 @@ function createNewEvent() {
       time: eventTime,
       place: eventPlace
     };
-
+  
     // Add the event object to the events array
     events.push(event);
-
+  
     // Update the display
     displayEvents();
-  } else {
-    console.log("Event creation was cancelled.");
   }
-}
 
 // Function to display events
 function displayEvents() {

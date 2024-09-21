@@ -43,9 +43,32 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
   }
   
-  /* Date Display Styles */
-  .date-display {
+/* Date Display Styles */
+.date-display {
     font-size: 20px;
     color: #333;
+  }
+  
+  /* Container for events */
+  #eventsContainer {
+    display: flex;
+    border: 1px solid #333;   
+    align-items: top ;
+    justify-content: top;
+    
+    flex-direction: column; /* Stack events vertically */
+  }
+  
+  div.event {
+    background-color: #c3f5e9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  /* Target the first div.event */
+  div.event:first-of-type {
+    margin-top: px; /* Increase top margin for the first event */
   }
 

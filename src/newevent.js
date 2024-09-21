@@ -3,7 +3,7 @@ let events = [];
 
 // Define a function to open multiple popup windows for input
 function createNewEvent() {
-  const eventName = window.prompt("Inserisci l'evento:", "Allenamento");
+  const eventName = window.prompt("Inserisci l'even:", "Allenamento");
   if (eventName) {
     const eventDate = window.prompt("Inserisci la data dell'evento:", "01/01/2022");
     const eventTime = window.prompt("Inserisci l'ora dell'evento:", "12:00");

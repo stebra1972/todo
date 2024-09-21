@@ -1,26 +1,6 @@
 // Initialize an array to store event objects
 let events = [];
 
-
-
-// Function to display dates in the top row
-function displayDatesInTopRow() {
-    // Assuming `events` is your array of event objects
-    const datesHtml = events.map(event => {
-      // Convert event.date to a Date object if it's not already one
-      const eventDate = new Date(event.date);
-      const formattedDate = eventDate.toLocaleDateString('it-IT', {
-        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
-      });
-      return `<span>${formattedDate}</span>`; // Create a span for each date
-    }).join(' '); // Join all spans with a space
-  
-    // Assuming you have a div with id="topRow" in your HTML
-    document.getElementById('topRow').innerHTML = datesHtml;
-  }
-
-
-
 function createNewEvent() {
     const eventName = window.prompt("Inserisci l'evento:", "Allenamento");
     // Format today's date in Italian format
@@ -104,6 +84,7 @@ events.forEach((event, index) => {
 });
   
 }
+
 
 
 // Export the function

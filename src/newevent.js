@@ -2,15 +2,15 @@
 let events = [];
 
 function createNewEvent() {
-    const eventName = window.prompt("Inserisci l'evento:", "Allenamento");
+    const eventName = window.prompt("Inserisci l'evento:", "ES. Allenamento in palestra");
     // Format today's date in Italian format
     const today = new Date();
     const formattedToday = today.toLocaleDateString('it-IT', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
     });
-    const eventDate = window.prompt("Inserisci la data dell'evento:", formattedToday);
-    const eventTime = window.prompt("Inserisci l'ora dell'evento:", "12:00");
-    const eventPlace = window.prompt("Inserisci il luogo dell'evento", "Palestra");
+    const eventDate = window.prompt("Inserisci la data dell'evento:","gg/mm/aaaa");
+    const eventTime = window.prompt("Inserisci l'ora dell'evento:","hh:mm");
+    const eventPlace = window.prompt("Inserisci il luogo dell'evento", "Es. Palestra Fitness");
   
     function displayDatesInTopRow() {
         // Assuming `events` is your array of event objects

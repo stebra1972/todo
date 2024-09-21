@@ -68,8 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const topRow = document.getElementById('topRow');
     const eventsContainer = document.getElementById('eventsContainer');
   
-   
-  
     // Create a page for each date
     dates.forEach(date => {
       const dateDiv = document.createElement('div');
@@ -124,6 +122,54 @@ document.addEventListener('DOMContentLoaded', () => {
         displayEventsForDate(date);
       }
 
+      // Continue from the provided code
+
+// Create the right arrow button
+const rightArrow = document.createElement('button');
+rightArrow.textContent = '>';
+topRow.appendChild(rightArrow);
+
+// Create the date display
+const dateDisplay = document.createElement('div');
+dateDisplay.textContent = new Date().toLocaleDateString(); // Display today's date initially
+topRow.insertBefore(dateDisplay, leftArrow.nextSibling); // Insert date display between the arrows
+
+// Function to change the displayed date
+function changeDate(days) {
+  const currentDate = new Date(dateDisplay.textContent);
+  const newDate = new Date(currentDate.setDate(currentDate.getDate() + days));
+  dateDisplay.textContent = newDate.toLocaleDateString();
+  displayEventsForDate(newDate); // This function needs to be implemented
+}
+
+// Add event listeners to the arrow buttons
+leftArrow.addEventListener('click', () => changeDate(-1));
+rightArrow.addEventListener('click', () => changeDate(1));
+
+// Function to display events for a specific date
+function displayEventsForDate(date) {
+  // Assuming `events` is an array of event objects with a `date` property
+  const eventsForDate = events.filter(event => {
+    const eventDate = new Date(event.date);
+    return eventDate.toDateString() === date.toDateString();
+  });
+
+  // Clear existing events display
+  const eventsContainer = document.getElementById('eventsContainer');
+  if (eventsContainer) {
+    eventsContainer.innerHTML = '';
+  }
+
+  // Display events for the selected date
+  eventsForDate.forEach(event => {
+    const eventElement = document.createElement('div');
+    eventElement.textContent = `Event: ${event.name}`;
+    eventsContainer.appendChild(eventElement);
+  });
+}
+
+// Initial display of today's events
+displayEventsForDate(new Date());
 
 
   });

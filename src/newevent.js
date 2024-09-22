@@ -2,7 +2,8 @@
 let events = [];
 
 function createNewEvent() {
-    const eventName = window.prompt("Inserisci l'evento:", "ES. Allenamento in palestra");
+    const eventTime = window.prompt("Inserisci l'ora dell'evento:",getCurrentTime());
+    const eventName = window.prompt("Inserisci l'evento:", "Fitness");
     // Format today's date in Italian format
     const today = new Date();
     const formattedToday = today.toLocaleDateString('it-IT', {
@@ -19,8 +20,7 @@ function createNewEvent() {
 
 
     const eventDate = window.prompt("Inserisci la data dell'evento:",formattedToday);
-    const eventTime = window.prompt("Inserisci l'ora dell'evento:",getCurrentTime());
-    const eventPlace = window.prompt("Inserisci il luogo dell'evento", "Es. Palestra Fitness");
+    const eventPlace = window.prompt("Inserisci il luogo dell'evento", "Palestra");
   
     function displayDatesInTopRow() {
         // Assuming `events` is your array of event objects

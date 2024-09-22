@@ -1,28 +1,33 @@
+import './styles.css';
+
 document.addEventListener('DOMContentLoaded', () => {
     const topRow = document.createElement('div');
     const eventButton = document.createElement('button');
     const leftArrow = document.createElement('button');
     const rightArrow = document.createElement('button');
     const dateDisplay = document.createElement('span');
-    const eventsContainer = document.createElement('div');
+
     
     
     
     let currentDate = new Date();
-
-
 
     eventButton.textContent = 'Event';
     leftArrow.textContent = '<';
     rightArrow.textContent = '>';
     dateDisplay.textContent = formatDate(new Date()); // Format the initial date
 
-    document.body.appendChild(eventButton);
+    document.body.appendChild(topRow); // Append the topRow to the document body
     topRow.appendChild(leftArrow);
     topRow.appendChild(dateDisplay);
     topRow.appendChild(rightArrow);
-    document.body.appendChild(topRow);
+    topRow.appendChild(eventButton); // Append eventButton to topRow
+    document.body.appendChild(eventsContainer); // Ensure eventsContainer is still appended to the document body
 
+
+
+
+    
     function formatDate(date) {
         return date.toLocaleDateString('it-IT', {
             weekday: 'long', // nome del giorno della settimana
@@ -33,11 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
-
-
-    
-    document.body.appendChild(eventsContainer);
+document.body.appendChild(eventsContainer);
 
 leftArrow.addEventListener('click', () => {
     currentDate.setDate(currentDate.getDate() - 1);
@@ -80,7 +81,7 @@ rightArrow.addEventListener('click', () => {
     
             // Create delete button for each event
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
+            deleteButton.textContent = 'Eseguito';
             deleteButton.onclick = () => {
                 // Remove the event from the array and update local storage
                 eventsForDate.splice(index, 1);
@@ -95,7 +96,8 @@ rightArrow.addEventListener('click', () => {
         });
     }
 
+
+
     displayEventsForCurrentDate(); // Display events for the current date on load
 });
 
-import './styles.css';

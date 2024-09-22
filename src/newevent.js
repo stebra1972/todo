@@ -30,12 +30,14 @@ function createNewEvent() {
           const formattedDate = eventDate.toLocaleDateString('it-IT', {
             weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
           });
+
           return `<span>${formattedDate}</span>`; // Create a span for each date
         }).join(' '); // Join all spans with a space
       
         // Assuming you have a div with id="topRow" in your HTML
         document.getElementById('topRow').innerHTML = datesHtml;
         }
+
 
     // Store event details in an object
     const event = {
@@ -61,6 +63,7 @@ function displayEvents() {
     eventsContainer.id = "eventsContainer";
     document.body.appendChild(eventsContainer);
   }
+
 
   // Clear the container before adding updated events list
   eventsContainer.innerHTML = "";
@@ -95,7 +98,11 @@ events.forEach((event, index) => {
   
 }
 
-
-
 // Export the function
 export { createNewEvent };
+export { displayEvents };
+export { events};
+
+
+
+

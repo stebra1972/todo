@@ -1,4 +1,6 @@
 
+
+
 // Create the top row container
 const topRow = document.createElement('div');
 topRow.style.display = 'flex';
@@ -9,6 +11,11 @@ document.body.appendChild(topRow);
 
 // Import the createNewEvent function
 import { createNewEvent } from './newevent.js';
+import { displayEvents } from './newevent.js';
+import { events } from './newevent.js';
+
+
+
 
 // Existing code to create the "New Event" button
 const newEventButton = document.createElement('button');
@@ -120,32 +127,31 @@ document.addEventListener('DOMContentLoaded', () => {
       
         // Optionally, refresh the display if the date is currently selected
         displayEventsForDate(date);
-      }
+              // Continuation from the provided excerpt
+              eventsByDate[date].push(eventDescription);
 
-      // Continue from the provided code
-
-// Create the right arrow button
-const rightArrow = document.createElement('button');
-rightArrow.textContent = '>';
-topRow.appendChild(rightArrow);
-
-// Create the date display
-const dateDisplay = document.createElement('div');
-dateDisplay.textContent = new Date().toLocaleDateString(); // Display today's date initially
-topRow.insertBefore(dateDisplay, leftArrow.nextSibling); // Insert date display between the arrows
-
-// Function to change the displayed date
-function changeDate(days) {
-  const currentDate = new Date(dateDisplay.textContent);
-  const newDate = new Date(currentDate.setDate(currentDate.getDate() + days));
-  dateDisplay.textContent = newDate.toLocaleDateString();
-  displayEventsForDate(newDate); // This function needs to be implemented
-}
-
-// Add event listeners to the arrow buttons
-leftArrow.addEventListener('click', () => changeDate(-1));
-rightArrow.addEventListener('click', () => changeDate(1));
-
+              // Update the display for the corresponding date if it's currently being viewed
+              updateDisplayForDate(date);
+          }
+      
+          function updateDisplayForDate(date) {
+              const specificEventsPage = document.getElementById(`events-${date}`);
+              if (specificEventsPage && specificEventsPage.style.display === 'block') {
+                  // Clear existing events and display the updated list
+                  specificEventsPage.innerHTML = ''; // Clear existing events
+      
+                  if (eventsByDate[date] && eventsByDate[date].length > 0) {
+                      eventsByDate[date].forEach(eventDescription => {
+                          const eventElement = document.createElement('div');
+                          eventElement.textContent = eventDescription;
+                          specificEventsPage.appendChild(eventElement);
+                      });
+                  } else {
+                      // Display a message if there are no events for this date after update
+                      specificEventsPage.textContent = 'No events for this date.';
+                  }
+              }
+          }
 // Function to display events for a specific date
 function displayEventsForDate(date) {
   // Assuming `events` is an array of event objects with a `date` property

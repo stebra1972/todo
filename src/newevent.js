@@ -8,8 +8,18 @@ function createNewEvent() {
     const formattedToday = today.toLocaleDateString('it-IT', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
     });
-    const eventDate = window.prompt("Inserisci la data dell'evento:","gg/mm/aaaa");
-    const eventTime = window.prompt("Inserisci l'ora dell'evento:","hh:mm");
+
+    function getCurrentTime() {
+        const now = new Date();
+        return now.toLocaleTimeString('it-IT', {
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+      }
+
+
+    const eventDate = window.prompt("Inserisci la data dell'evento:",formattedToday);
+    const eventTime = window.prompt("Inserisci l'ora dell'evento:",getCurrentTime());
     const eventPlace = window.prompt("Inserisci il luogo dell'evento", "Es. Palestra Fitness");
   
     function displayDatesInTopRow() {

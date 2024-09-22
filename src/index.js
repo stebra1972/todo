@@ -176,4 +176,3 @@ displayEventsForDate(new Date());
 
   import "./styles.css"; // Import the CSS file
 
-

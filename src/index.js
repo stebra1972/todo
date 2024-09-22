@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftArrow = document.createElement('button');
     const rightArrow = document.createElement('button');
     const dateDisplay = document.createElement('span');
+    const eventsContainer = document.createElement('div');
+    eventsContainer.id = 'eventsContainer';
 
-    
+
     
     
     let currentDate = new Date();
@@ -25,9 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(eventsContainer); // Ensure eventsContainer is still appended to the document body
 
 
-
-
-    
     function formatDate(date) {
         return date.toLocaleDateString('it-IT', {
             weekday: 'long', // nome del giorno della settimana
@@ -95,6 +94,7 @@ rightArrow.addEventListener('click', () => {
             eventsContainer.appendChild(eventDiv);
         });
     }
+    
 
 
 

@@ -32,13 +32,18 @@ body {
   div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position:fixed; /* Fix the position at the top */
+    position: fixed;
+    align-items: left;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
     width: 100%; /* Span across the full width */
     background-color: #619297; /* Optional: background color to match the page or stand out */
-    padding: 5px px; /* Optional: add some padding */
+    padding: 5px 10px; /* Optional: add some padding */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
   }
   
@@ -47,18 +52,9 @@ body {
     font-size: 20px;
     color: #333;
   }
+
+ 
   
-    .eventsContainer{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Span across the full width */
-    background-color: #457757; /* Optional: background color to match the page or stand out */
-    padding: 5px px; /* Optional: add some padding */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
-    }
   
 
 

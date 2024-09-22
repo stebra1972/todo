@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightArrow = document.createElement('button');
     const dateDisplay = document.createElement('span');
     const eventsContainer = document.createElement('div');
+    
+    
+    
     let currentDate = new Date();
 
 
@@ -12,27 +15,41 @@ document.addEventListener('DOMContentLoaded', () => {
     eventButton.textContent = 'Event';
     leftArrow.textContent = '<';
     rightArrow.textContent = '>';
-    dateDisplay.textContent = currentDate.toDateString();
+    dateDisplay.textContent = formatDate(new Date()); // Format the initial date
 
     document.body.appendChild(eventButton);
     topRow.appendChild(leftArrow);
     topRow.appendChild(dateDisplay);
     topRow.appendChild(rightArrow);
     document.body.appendChild(topRow);
+
+    function formatDate(date) {
+        return date.toLocaleDateString('it-IT', {
+            weekday: 'long', // nome del giorno della settimana
+            day: 'numeric', // il giorno del mese
+            month: 'long', // il mese
+            year: 'numeric' // l'anno
+        });
+    }
+
+
+
+
+
     
     document.body.appendChild(eventsContainer);
 
-    leftArrow.addEventListener('click', () => {
-        currentDate.setDate(currentDate.getDate() - 1);
-        dateDisplay.textContent = currentDate.toDateString();
-        displayEventsForCurrentDate();
-    });
+leftArrow.addEventListener('click', () => {
+    currentDate.setDate(currentDate.getDate() - 1);
+    dateDisplay.textContent = formatDate(currentDate);
+    displayEventsForCurrentDate();
+});
 
-    rightArrow.addEventListener('click', () => {
-        currentDate.setDate(currentDate.getDate() + 1);
-        dateDisplay.textContent = currentDate.toDateString();
-        displayEventsForCurrentDate();
-    });
+rightArrow.addEventListener('click', () => {
+    currentDate.setDate(currentDate.getDate() + 1);
+    dateDisplay.textContent = formatDate(currentDate);
+    displayEventsForCurrentDate();
+});
 
     eventButton.addEventListener('click', () => {
         const ora = prompt('Ora:');

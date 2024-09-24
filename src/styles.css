@@ -60,11 +60,12 @@ body {
     display: flex;
     position: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     background-color: #619297;
     padding: 0px 2px;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 5px rgba(0,0,2,0.2);
     transition: background-color 0.3s ease;
     border-radius: 20px;
 }

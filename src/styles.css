@@ -31,16 +31,12 @@ body {
   
   div {
     display: flex;
-    justify-content: space-between;
-    position: center;
-    align-items: left;
-    flex-direction: column  ;
-    width: 100%;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: right;
+    flex-direction: column;
+    width: 100%;;
     padding: 20px;
     background-color: #fff;
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
     width: 100%; /* Span across the full width */
     background-color: #619297; /* Optional: background color to match the page or stand out */
     padding: 5px 10px; /* Optional: add some padding */

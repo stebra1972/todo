@@ -31,35 +31,28 @@ body {
   
   div {
     display: flex;
-    justify-content: center;
-    align-items: right;
+    justify-content: space-between;; /* Modifica qui per allineare i contenuti a sinistra */
     flex-direction: column;
-    width: 100%;;
-    padding: 20px;
-    background-color: #fff;
-    width: 100%; /* Span across the full width */
-    background-color: #619297; /* Optional: background color to match the page or stand out */
-    padding: 5px 10px; /* Optional: add some padding */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
-  }
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #619297;
+    padding: 0px 2px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
 
 
   id {
     display: flex;
     justify-content: space-between;
-    align-items: left;
     position:fixed;
     flex-direction: row;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
     background-color: #fff;
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
     width: 100%; /* Span across the full width */
     background-color: #619297; /* Optional: background color to match the page or stand out */
     padding: 5px 10px; /* Optional: add some padding */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
+    box-shadow: 0 2px 500px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
   }
 
 

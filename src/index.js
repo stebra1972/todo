@@ -8,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateDisplay = document.createElement('span');
     const eventsContainer = document.createElement('div');
     
-    
 
-
-    
-    
     let currentDate = new Date();
 
     eventButton.textContent = 'Event';

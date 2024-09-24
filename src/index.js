@@ -1,13 +1,14 @@
 import './styles.css';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const topRow = document.createElement('div');
+    const topRow = document.createElement('id');
     const eventButton = document.createElement('button');
     const leftArrow = document.createElement('button');
     const rightArrow = document.createElement('button');
     const dateDisplay = document.createElement('span');
     const eventsContainer = document.createElement('div');
-    eventsContainer.id = 'eventsContainer';
+    
+    
 
 
     
@@ -100,4 +101,3 @@ rightArrow.addEventListener('click', () => {
 
     displayEventsForCurrentDate(); // Display events for the current date on load
 });
-

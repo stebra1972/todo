@@ -32,8 +32,27 @@ body {
   div {
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    position: center;
     align-items: left;
+    flex-direction: column  ;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Span across the full width */
+    background-color: #619297; /* Optional: background color to match the page or stand out */
+    padding: 5px 10px; /* Optional: add some padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
+  }
+
+
+  id {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    position:fixed;
     flex-direction: row;
     width: 100%;
     margin: 0 auto;
@@ -46,6 +65,16 @@ body {
     padding: 5px 10px; /* Optional: add some padding */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
   }
+
+
+
+
+
+
+
+
+
+
   
 /* Date Display Styles */
 .date-display {

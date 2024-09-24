@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentDate = new Date();
 
-    eventButton.textContent = 'Event';
+    eventButton.textContent = 'Evento';
     leftArrow.textContent = '<';
     rightArrow.textContent = '>';
     dateDisplay.textContent = formatDate(new Date()); // Format the initial date

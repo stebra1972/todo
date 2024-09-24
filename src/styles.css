@@ -17,7 +17,7 @@ body {
     background-color: #0a7bf4;
     color: rgb(16, 2, 2);
     padding: 10px 20px;
-    margin: 0 5px;
+    margin: 0 2px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -47,6 +47,7 @@ body {
     position:fixed;
     flex-direction: row;
     background-color: #fff;
+    border-radius: 3px;
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
     width: 100%; /* Span across the full width */
@@ -55,21 +56,24 @@ body {
     box-shadow: 0 2px 500px rgba(0,0,0,0.2); /* Optional: add a slight shadow for depth */
   }
 
-
-
-
-
-
+  span {
+    display: flex;
+    position: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #619297;
+    padding: 0px 2px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
 
 
 
 
   
-/* Date Display Styles */
-.date-display {
-    font-size: 20px;
-    color: #333;
-  }
+
 
  
   

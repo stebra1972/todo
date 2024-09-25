@@ -77,7 +77,11 @@ rightArrow.addEventListener('click', () => {
     
             // Create delete button for each event
             const deleteButton = document.createElement('button');
+            deleteButton.style.width = '120px';
+            deleteButton.style.height = '40px';
+            
             deleteButton.textContent = 'Eseguito';
+            
             deleteButton.onclick = () => {
                 // Remove the event from the array and update local storage
                 eventsForDate.splice(index, 1);
